@@ -1,44 +1,44 @@
 import java.util.InputMismatchException;
 import java.util.Scanner;
-class subarray{
-    public static boolean FindSum(int arr[],int size,int target){
-        boolean res=false;
-        for(int i=0;i<size;i++){
-            for(int j=i+1;j<size;j++){
-                if(arr[i]+arr[j]==target){
-                    System.out.println("value found at index: "+i);
-                    return true;
+
+class subarray {
+    public boolean FindSum(int arr[], int size, int target) {
+        boolean res = false;
+        for (int i = 0; i < size; i++) {
+            for (int j = i + 1; j < size; j++) {
+                if (arr[i] + arr[j] == target) {
+                    System.out.println("value found at index: " + i);
+                    return res = true;
                 }
             }
             break;
         }
-        return false;
+        return res = false;
 
     }
 }
+
 public class SubArray {
 
     public static void main(String[] args) throws Exception {
-        Scanner sc=new Scanner(System.in);
-        subarray ob=new subarray();
+        Scanner sc = new Scanner(System.in);
+        subarray ob = new subarray();
         System.out.println("Enter the size of the Array");
-        int size=sc.nextInt();
-        int arr[]=new int[size];
+        int size = sc.nextInt();
+        int arr[] = new int[size];
         System.out.println("Enter the value in the array");
-        try{
-            for(int i=0;i<size;i++){
-                arr[i]=sc.nextInt();
+        try {
+            for (int i = 0; i < size; i++) {
+                arr[i] = sc.nextInt();
             }
-        }
-        catch(ArrayIndexOutOfBoundsException e){
+        } catch (ArrayIndexOutOfBoundsException e) {
             e.printStackTrace();
-        }
-        catch(InputMismatchException s){
+        } catch (InputMismatchException s) {
             s.printStackTrace();
         }
         System.out.println("Enter the Target Value");
-        int target=sc.nextInt();
-        boolean result=ob.FindSum(arr, size, target);
+        int target = sc.nextInt();
+        boolean result = ob.FindSum(arr, size, target);
         System.out.println(result);
     }
 }
