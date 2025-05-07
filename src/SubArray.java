@@ -8,12 +8,16 @@ class subarray {
             for (int j = i + 1; j < size; j++) {
                 if (arr[i] + arr[j] == target) {
                     System.out.println("value found at index: " + i);
-                    return res = true;
+                    res = true;
                 }
             }
-            break;
+
         }
-        return res = false;
+        if (res = true) {
+            return res = true;
+        } else {
+            return res = false;
+        }
 
     }
 }
