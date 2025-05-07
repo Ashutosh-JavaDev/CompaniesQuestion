@@ -20,6 +20,7 @@ public class SubArray {
 
     public static void main(String[] args) throws Exception {
         Scanner sc=new Scanner(System.in);
+        subarray ob=new subarray();
         System.out.println("Enter the size of the Array");
         int size=sc.nextInt();
         int arr[]=new int[size];
@@ -35,5 +36,9 @@ public class SubArray {
         catch(InputMismatchException s){
             s.printStackTrace();
         }
+        System.out.println("Enter the Target Value");
+        int target=sc.nextInt();
+        boolean result=ob.FindSum(arr, size, target);
+        System.out.println(result);
     }
 }
