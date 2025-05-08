@@ -5,18 +5,18 @@ class subarray {
     public boolean FindSum(int arr[], int size, int target) {
         boolean res = false;
         for (int i = 0; i < size; i++) {
-            for (int j = i + 1; j < size; j++) {
+            for (int j =0; j < size; j++) {
                 if (arr[i] + arr[j] == target) {
-                    System.out.println("value found at index: " + i);
+                    System.out.println("arr[" +i+"] + arr["+j+"] = "+target);
                     res = true;
                 }
             }
 
         }
-        if (res = true) {
+        if (res == true) {
             return res = true;
-        } else {
-            return res = false;
+        } else{
+            return res=false;
         }
 
     }
