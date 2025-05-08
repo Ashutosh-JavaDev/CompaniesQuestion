@@ -5,9 +5,9 @@ class subarray {
     public boolean FindSum(int arr[], int size, int target) {
         boolean res = false;
         for (int i = 0; i < size; i++) {
-            for (int j =0; j < size; j++) {
+            for (int j = 0; j < size; j++) {
                 if (arr[i] + arr[j] == target) {
-                    System.out.println("arr[" +i+"] + arr["+j+"] = "+target);
+                    System.out.println("arr[" + i + "] + arr[" + j + "] = " + target);
                     res = true;
                 }
             }
@@ -15,8 +15,8 @@ class subarray {
         }
         if (res == true) {
             return res = true;
-        } else{
-            return res=false;
+        } else {
+            return res = false;
         }
 
     }
@@ -31,15 +31,23 @@ public class SubArray {
         int size = sc.nextInt();
         int arr[] = new int[size];
         System.out.println("Enter the value in the array");
-        try {
-            for (int i = 0; i < size; i++) {
-                arr[i] = sc.nextInt();
+        while (true) {
+            try {
+                for (int i = 0; i < size; i++) {
+                    arr[i] = sc.nextInt();
+                }
+            } catch (ArrayIndexOutOfBoundsException e) {
+                e.printStackTrace();
+            // continue;
+
+            } catch (InputMismatchException s) {
+                s.printStackTrace();
+            continue;
+
             }
-        } catch (ArrayIndexOutOfBoundsException e) {
-            e.printStackTrace();
-        } catch (InputMismatchException s) {
-            s.printStackTrace();
+            break;
         }
+
         System.out.println("Enter the Target Value");
         int target = sc.nextInt();
         boolean result = ob.FindSum(arr, size, target);
